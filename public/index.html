@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="sportsStore">
+
+<head>
+    <title>Sports Store</title>
+    <link rel="stylesheet" type="text/css" href="scripts/components/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="scripts/components/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="scripts/components/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/components/bower_components/angular/angular.min.js"></script>
+    <script src="scripts/components/bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="scripts/components/bower_components/angular-route/angular-route.min.js"></script>
+</head>
+
+<body ng-controller="SportsStoreCtrl">
+    <div class="container">
+        <div class="navbar">
+            <a href="#/products" class="navbar-brand"><i class='glyphicon glyphicon-home'></i></a>
+            <cart-summary/>
+        </div>
+        <div class="alert alert-danger" ng-show="data.error">
+            Error ({{data.error.status}}). The product data was not loaded.
+            <a href="/index.html" class="alert-link">Click here to try again</a>
+        </div>
+        <ng-view />
+    </div>
+    <br><br><br><br><br><br><br>
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-bottom" style="display: flex; justify-content: flex-end;">
+            <p style="color: #fafafa; text-transform: uppercase; padding: 7px;">Powered by &#9400;and1 software 2015</p>
+        </div>
+    </div>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/sportsStoreCtrl.js"></script>
+    <script src="scripts/filters/categoryFilter.js"></script>
+    <script src="scripts/controllers/listCtrl.js"></script>
+    <script src='scripts/ngmodules/cart.js'></script>
+    <script src='scripts/services/services.js'></script>
+    <script src='scripts/directives/directives.js'></script>
+    <script src='scripts/controllers/checkoutCtrl.js'></script>
+</body>
+
+</html>

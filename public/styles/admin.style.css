@@ -1,0 +1,23 @@
+body {
+    background-color: #412;
+}
+
+form,
+table {
+    background-color: #fff;
+}
+
+#productTable {
+    width: auto;
+}
+
+#productTable td {
+    max-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#productTable td input {
+    max-width: 125px;
+}

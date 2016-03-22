@@ -1,0 +1,42 @@
+<div ng-controller="ordersCtrl">
+    <h3 ng-show='orders.length == 0' style='color: #101; text-align: center; text-transform: uppercase;'>
+		Sorry, but you haven't any orders yet...
+	</h1>
+</div>
+<div ng-controller="ordersCtrl" ng-hide='orders.length == 0'>
+    <table class="table table-striped">
+        <tr class="success">
+            <th>Name</th>
+            <th>City</th>
+            <th>Value</th>
+            <th>Info</th>
+        </tr>
+        <tr ng-repeat="order in orders">
+            <td>{{order.name}}</td>
+            <td>{{order.city}}</td>
+            <td>{{calcTotal(order) | currency}}</td>
+            <td>
+                <button ng-click="selectOrder(order)" class="btn btn-sm btn-info">
+                    Details
+                </button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div ng-show="selectedOrder">
+        <hr>
+        <h3 class="text-center">Order Details</h3>
+    <table class="table table-striped table-hover table-bordered">
+        <tr class="warning">
+            <th>Name</th>
+            <th>Count</th>
+            <th>Price</th>
+        </tr>
+        <tr ng-repeat="item in selectedOrder.products">
+            <td>{{item.name}}</td>
+            <td>{{item.count}}</td>
+            <td>{{item.price| currency}} </td>
+        </tr>
+    </table>
+</div>
+</div>
